@@ -1,0 +1,23 @@
+{
+  "name": "budget-express",
+  "version": "1.0.0",
+  "description": "Backend for budget app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenFro21/budget-express.git"
+  },
+  "author": "Ben Broad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenFro21/budget-express/issues"
+  },
+  "homepage": "https://github.com/BenFro21/budget-express#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.6.5"
+  }
+}
