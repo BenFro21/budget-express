@@ -1,11 +1,23 @@
 const Budget = require('../models/budgetModels')
 
 const showAll = (req, res) => {
-    Budget.find({})
+    Budget.find({}, (err, budgets) =>{
+        if(err){
+            res.status(400).json(err)
+            return
+        }
+        res.json(budgets)
+    })
 }
 
 const showOne = (req, res) => {
-    Budget.findById(req.params.id)
+    Budget.findById(req.params.id, (err, budget) => {
+        if(err){
+            res.status(400).json(err)
+            return
+        }
+        res.json(budget)
+    })
 }
 
 let createBudget = (req, res) => {
@@ -20,7 +32,14 @@ let createBudget = (req, res) => {
 }
 
 let editBudget = (req,res) => {
-
+    Budget.findByIdAndUpdate(req.params.id, (err, budget) => {
+        if(err){
+            res.status(400).json(err)
+            return
+        }
+        budget.save()
+        res.json(budget)
+    })
 }
 
 let deleteBudget = (req, res) => {
